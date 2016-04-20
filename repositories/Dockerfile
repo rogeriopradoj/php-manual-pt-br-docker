@@ -2,8 +2,8 @@ FROM rogeriopradoj/php-manual-pt-br-dependencies
 
 MAINTAINER rogeriopradoj <rogeriopradoj@gmail.com>
 
-RUN REPOSITORIES_TEMP="/repositories_temp" && \
-    rm -rf REPOSITORES_TEMP && \
+RUN export REPOSITORIES_TEMP="/repositories_temp" && \
+    rm -rf $REPOSITORIES_TEMP && \
     mkdir $REPOSITORIES_TEMP
 
 RUN cd $REPOSITORIES_TEMP && \
