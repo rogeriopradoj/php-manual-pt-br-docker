@@ -1,4 +1,4 @@
-FROM rogeriopradoj/php-manual-pt-br-repositories
+FROM rogeriopradoj/php-manual-pt-br-dependencies
 
 MAINTAINER rogeriopradoj <rogeriopradoj@gmail.com>
 
