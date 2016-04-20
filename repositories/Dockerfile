@@ -4,9 +4,8 @@ MAINTAINER rogeriopradoj <rogeriopradoj@gmail.com>
 
 RUN export REPOSITORIES_TEMP="/repositories_temp" && \
     rm -rf $REPOSITORIES_TEMP && \
-    mkdir $REPOSITORIES_TEMP
-
-RUN cd $REPOSITORIES_TEMP && \
+    mkdir $REPOSITORIES_TEMP && \
+    cd $REPOSITORIES_TEMP && \
     svn checkout https://svn.php.net/repository/phpdoc/modules/doc-en && \
     cd doc-en && \
     php doc-base/configure.php --enable-xml-details && \
