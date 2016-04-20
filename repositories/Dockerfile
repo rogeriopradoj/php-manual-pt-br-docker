@@ -4,7 +4,7 @@ MAINTAINER rogeriopradoj <rogeriopradoj@gmail.com>
 
 RUN REPOSITORIES_TEMP="/repositories_temp" && \
     rm -rf REPOSITORES_TEMP && \
-    mkdir $REPOSITORIES_TEMP && \
+    mkdir $REPOSITORIES_TEMP
 
 RUN cd $REPOSITORIES_TEMP && \
     svn checkout https://svn.php.net/repository/phpdoc/modules/doc-en && \
