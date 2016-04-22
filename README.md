@@ -12,38 +12,49 @@ Agilize a montagem do seu ambiente de tradução do manual do PHP para portuguê
 
 -  Acesse a pasta onde você vai trabalhar no seu computador:
 ```
-# exemplo de pasta, escolha a sua
+    # exemplo de pasta, escolha a sua
 export SUA_PASTA="$HOME/contribs/php-manual-pt-br"
 
-# se a pasta não estiver criada ainda, rode também
-# mkdir -p $SUA_PASTA
-
+[ -d $SUA_PASTA ] || mkdir -p $SUA_PASTA
 cd $SUA_PASTA
 ```
 
 - Execute o `./do.sh`:
 
 ```
-./do.sh
-#
-#-----------------------------------------------------------------------
-#                      Available commands                              -
-#-----------------------------------------------------------------------
-# _Standalone_
-#==============
-#   > git
-#   > pear
-#   > phd
-#   > php
-#   > rsync
-#   > svn
-# _Helpers_
-#==============
-# _Extras_
-#==============
-#   > sh - Log you into container
-#   > help - Display this help
-#-----------------------------------------------------------------------
+    ./do.sh
+    #
+    #-----------------------------------------------------------------------
+    #                      Available commands                              -
+    #-----------------------------------------------------------------------
+    # _Standalone_
+    #==============
+    #   > git
+    #   > pear
+    #   > phd
+    #   > php
+    #   > rsync
+    #   > svn
+    # _Helpers_
+    #==============
+    #   > update - Sync your repos with upstream
+    #   > test - Test your manual compilation via 0.0.0.0:4000 in your browser
+    # _Extras_
+    #==============
+    #   > sh - Log you into container
+    #   > help - Display this help
+    #-----------------------------------------------------------------------
+```
+
+Se preferir, pode criar um alias para o `do.sh` no seu "profile":
+
+```
+    ## escolha uma das opções abaixo de acordo com seu shell/terminal/profile
+echo "alias do='$SUA_PASTA/do.sh'" >> $HOME/.bashrc
+    ## ou
+echo "alias do='$SUA_PASTA/do.sh'" >> $HOME/.zshrc
+    ## ou
+echo "alias do='$SUA_PASTA/do.sh'" >> $HOME/.profile
 ```
 
 ### Dependências Standalone

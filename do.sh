@@ -24,37 +24,47 @@ error() {
 
 git() {
   log "git via container"
-  docker run -it --rm -v $(pwd):/php-manual-pt-br $IMAGE_NAME sh -c "git $*"
+  docker run -it --rm -w=/php-manual-pt-br -v $(pwd):/php-manual-pt-br $IMAGE_NAME sh -c "git $*"
 }
 
 pear() {
   log "pear via container"
-  docker run -it --rm -v $(pwd):/php-manual-pt-br $IMAGE_NAME sh -c "pear $*"
+  docker run -it --rm -w="/php-manual-pt-br" -v $(pwd):/php-manual-pt-br $IMAGE_NAME sh -c "pear $*"
 }
 
 phd() {
   log "phd via container"
-  docker run -it --rm -v $(pwd):/php-manual-pt-br $IMAGE_NAME sh -c "phd $*"
+  docker run -it --rm -w="/php-manual-pt-br" -v $(pwd):/php-manual-pt-br $IMAGE_NAME sh -c "phd $*"
 }
 
 php() {
   log "php via container"
-  docker run -it --rm -v $(pwd):/php-manual-pt-br $IMAGE_NAME sh -c "php $*"
+  docker run -it --rm -w="/php-manual-pt-br" -p 4000:4000 -v $(pwd):/php-manual-pt-br $IMAGE_NAME sh -c "php $*"
 }
 
 rsync() {
   log "rsync via container"
-  docker run -it --rm -v $(pwd):/php-manual-pt-br $IMAGE_NAME sh -c "rsync $*"
+  docker run -it --rm -w="/php-manual-pt-br" -v $(pwd):/php-manual-pt-br $IMAGE_NAME sh -c "rsync $*"
 }
 
 svn() {
   log "svn via container"
-  docker run -it --rm -v $(pwd):/php-manual-pt-br $IMAGE_NAME sh -c "svn $*"
+  docker run -it --rm -w="/php-manual-pt-br" -v $(pwd):/php-manual-pt-br $IMAGE_NAME sh -c "svn $*"
 }
 
 sh() {
   log "SH"
-  docker run -it --rm -v $(pwd):/php-manual-pt-br $IMAGE_NAME sh
+  docker run -it --rm -w="/php-manual-pt-br" -p 4000:4000 -v $(pwd):/php-manual-pt-br $IMAGE_NAME sh
+}
+
+update() {
+  log "update repos"
+  docker run -it --rm -w="/php-manual-pt-br" -v $(pwd):/php-manual-pt-br $IMAGE_NAME sh -c "/scripts/0-default.sh"
+}
+
+test() {
+  log "test your manual compilation via 0.0.0.0:4000 in your browser"
+  docker run -it --rm -w="/php-manual-pt-br"  -p 4000:4000 -v $(pwd):/php-manual-pt-br $IMAGE_NAME sh -c "php -S 0.0.0.0:4000 -t /php-manual-pt-br/web-php"
 }
 
 help() {
@@ -72,6 +82,8 @@ help() {
   echo "   > svn"
   echo " _Helpers_"
   echo "=============="
+  echo "   > update - Sync your repos with upstream"
+  echo "   > test - Test your manual compilation via 0.0.0.0:4000 in your browser"
   echo " _Extras_"
   echo "=============="
   echo "   > sh - Log you into container"
