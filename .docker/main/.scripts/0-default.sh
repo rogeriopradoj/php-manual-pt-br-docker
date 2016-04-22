@@ -15,7 +15,7 @@ colorize_output() {
 
 update_svn() {
   local lang="$1"
-  local repo_dir="/repositories_temp/doc-${lang}"
+  local repo_dir="/php-manual-pt-br/doc-${lang}"
 
   echo "Updating svn ${lang}" | colorize_output
 
@@ -29,7 +29,7 @@ update_svn() {
 }
 
 update_svn_en() {
-  local repo_dir="/repositories_temp/doc-en"
+  local repo_dir="/php-manual-pt-br/doc-en"
 
   echo "Updating svn en" | colorize_output
 
@@ -43,7 +43,7 @@ update_svn_en() {
 }
 
 update_svn_pt_br() {
-  local repo_dir="/repositories_temp/doc-pt_BR"
+  local repo_dir="/php-manual-pt-br/doc-pt_BR"
 
   echo "Updating svn pt_BR" | colorize_output
 
@@ -57,7 +57,7 @@ update_svn_pt_br() {
 }
 
 update_git_web() {
-  local repo_dir="/repositories_temp/web-php"
+  local repo_dir="/php-manual-pt-br/web-php"
 
   echo "Updating git web" | colorize_output
 
