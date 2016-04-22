@@ -1,5 +1,9 @@
 # php-manual-pt-br-docker
 
+[![](https://imagelayers.io/badge/rogeriopradoj/php-manual-pt-br:latest.svg)](https://imagelayers.io/?images=rogeriopradoj/php-manual-pt-br:latest 'Get your own badge on imagelayers.io')
+[![](https://imagelayers.io/badge/rogeriopradoj/php-manual-pt-br-repositories:latest.svg)](https://imagelayers.io/?images=rogeriopradoj/php-manual-pt-br-repositories:latest 'Get your own badge on imagelayers.io')
+[![](https://imagelayers.io/badge/rogeriopradoj/php-manual-pt-br-dependencies:latest.svg)](https://imagelayers.io/?images=rogeriopradoj/php-manual-pt-br-dependencies:latest 'Get your own badge on imagelayers.io')
+
 Agilize a montagem do seu ambiente de tradução do manual do PHP para português do Brasil usando containers Docker.
 
 ## Informações gerais sobre o processo:
