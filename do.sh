@@ -64,7 +64,7 @@ update() {
 
 test() {
   log "test your manual compilation via 0.0.0.0:4000 in your browser"
-  docker run -it --rm -w="/php-manual-pt-br"  -p 4000:4000 -v $(pwd):/php-manual-pt-br $IMAGE_NAME sh -c "php -S 0.0.0.0:4000 -t /php-manual-pt-br/web-php"
+  docker run -it --rm -w="/php-manual-pt-br"  -p 4000:4000 -v $(pwd):/php-manual-pt-br $IMAGE_NAME sh -c "/scripts/0-default.sh && php -S 0.0.0.0:4000 -t /php-manual-pt-br/web-php"
 }
 
 help() {
